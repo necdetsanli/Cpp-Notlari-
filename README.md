@@ -1,2 +1,2 @@
-# C-Notlar-
+# C-Notları
 C++ Kısa Notlar
