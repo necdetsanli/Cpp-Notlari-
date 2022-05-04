@@ -1,0 +1,102 @@
+C ve C++ Arasındaki Bazı Farklar: 
+
+-C++ dilinde implicit int kuralı yoktur, kullanma girişimi sentaks hatasıdır
+
+-C++ dilinde fonksiyon bildirimlerinde ve tanımlamalarında fonksiyonun parametre parantezinin içini boş bırakmakla void -
+anahtar sözcüğünü yazmak arasında anlamsal açıdan bir fark yoktur. İkisi de fonksiyonun parametre değişkeni olmadığı -
+anlamına gelir. 
+
+-C'de C99 standartlarına kadar blok içinde yapılan tüm bildirimlerin blokların başında yapılması gerektiği kuralı vardı. C99 -
+standartları ile bu kural kaldırılmıştır. C++'da ise hiçbir zaman böyle bir kısıtlama olmadı. 
+
+-C dilinde "old style function definition" denen bir fonksiyon tanımlama sentaksı varken, C++ dilinde böyle bir kural yoktur.
+
+
+Türlere ilişkin Farklılıklar: 
+
+-C dilinde pointer türleri ile tam sayı türleri arasında örtülü tür dönüşümü varken, C++ dilinde aritmetik türlerden pointer -
+türlerine örtülü tür dönüşümü yoktur. 
+
+-Void pointerdan diğer türden pointerlara yapılan dönüşüm C dilinde geçerli iken, C++ dilinde sentaks hatasıdır, otomatik -
+dönüşüm yoktur. 
+
+-C dilinde karakter sabitlerinin türü int iken, C++'da bunlara teknik olarak karakter sabiti (character constant) denmez, -
+character literal denir ve türü char'dır.
+
+-C dilinde string literal'leri char diziler iken, C++ dilinde const char dizilerdir. 
+
+Const Anahtar Sözcüğü İle İlgili Farklılıklar: 
+
+-C dilinde const anahtar sözcüğü ile tanımlanmış bir değişkene, yani kendisi const olan bir nesneye, ilk değer vermek zorunlu -
+değil iken, C++ dilinde zorunludur. 
+
+-C++ dilinde const anahtar sözcüğü ile tanımlanmış bir değişken eğer bir sabit ifadesi ile ilk değerini almışsa, değişkenin -
+oluşturduğu ifade de bir sabit ifadesidir. C'de ise böyle bir kural yoktur. 
+
+-C++ dilinde global değişkenlere ilk değer veren ifadeler sabit ifadesi olmak zorunda değildir. 
+
+Linkage İle İlgili Farklılıklar: 
+
+- C'de global değişkenlerin const olması bağlantı özelliğini değiştirmez. C++'da global const nesneler, default olarak -
+internal linkage'dır. 
+
+Tür Dönüşümleriyle İlgili Farklılıklar: 
+
+-C'de const nesne adresi türünden const olmayan nesne adresi türüne otomatik dönüşüm varıdr. C++ dilinde const T türünden -
+T türüne otomatik dönüşüm yoktur, sentaks hatasıdır. 
+
+-C++ dilinde dizi boyutuyla diziye ilk değer veren çift tırnak içindeki yazı aynı karaktre sayısına sahip olursa, sentaks -
+hatasıdır, C'de ise bu geçerlidir. 
+
+-C'de bool _Bool'a define edilmiş bir makro iken(stdbool.h başlık dosyasında), C++'da bool bir anahtar sözcüktür ve -
+distinct bir türdür. 
+
+Bool Türü: 
+
+-İşaretsiz bir tam sayı türü
+-sizeof değeri 1
+-Ayrı bir tür (distinct type)
+
+-Karşılaştırma operatörleri ve lojik operatörlerin ürettiği değer C'de int türden iken, C++'da bool türdendir. 
+
+-C++'da C'de olduğu gibi bool yerine int kullanılmaz, bool yerine bool kullanılır. 
+
+-C++ dilinde bool türü ile diğer aritmetik türler arasında örtülü tür dönüşümü vardır. 
+
+-Non zero ==> true
+-Zero ==> false
+
+- Pointer türlerinden bool türüne dönüşüm vardır. 
+
+-Null pointer ==> False
+
+-Null pointer olmayan bütün pointerlar ==> True 
+
+-bool türünden aritmetik türlere de dönüşüm vardır 
+
+true ==> 1
+false ==> 0
+
+-C++ dilinde bool türü, C'de ki gibi aritmetik işlemlerde kullanılamaz. Bazı işlemler, bool türden değişkenler üzerinde -
+legal değildir. Örneğin C++ dilinde bool türden bir nesne increment ve discrement operatörlerinin operandı olamaz. 
+
+-Pointer türlerinden bool türüne dönüşüm varken, bool türünden pointer türüne dönüşüm yoktur. 
+
+Null Pointer:
+
+-C'de de C++'da da null pointer conversion vardır. 
+
+-C++'da nullptr adında bir anahtar sözcük vardır ve null pointer semantiğinde kullanılır. 
+
+nullptr: 
+
+-Bir anahtar sözcük
+-Bir türü vardır ve türü, nullptr_t türüdür. 
+-C++ 11 standartları ile dile eklenmiştir. 
+-nullptr_t bir tür eş ismi değildir, kendi başına bir türdür. 
+
+-C++'da her zaman null pointer için nullptr anahtar sözcüğünü kullanmalıyız. Ne NULL makrosunu, ne de sıfır tam sayı -
+sabitini kullanmalıyız. 
+
+-C++ dilinde de integral promotion kuralı vardır ve C diline göre tek fark, bool türünün de bu kurala tabi olmasıdır. 
+
